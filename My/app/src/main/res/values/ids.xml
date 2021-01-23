@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="tvid_pemesan" type="id" />
+    <item name="tvjenis_pesanan" type="id" />
+    <item name="tvtanggal_pesanan" type="id" />
+    <item name="tvkota_adminitrasi" type="id" />
+    <item name="tvalamat_pemesan" type="id" />
+    <item name="tvnama_pemesan" type="id" />
+    <item name="tvstatus_pesanan" type="id" />
+    <item name="tvid_pesan" type="id" />
+</resources>

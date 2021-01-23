@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.DetilActivity">
+
+
+
+    <TextView
+        android:id="@+id/detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:text="Detail pesanan"
+        android:textStyle="bold"
+        android:textSize="30dp"/>
+
+    <TextView
+        android:id="@+id/id_pesanan"
+        android:layout_marginTop="175dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/detail"
+        android:text="   1"
+        android:textStyle="bold"
+        android:textSize="20sp"/>
+
+   <TextView
+       android:id="@+id/nama"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_below="@+id/id_pesanan"
+       android:text="   wibawa bangkit"
+       android:textStyle="bold"
+       android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/alamat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nama"
+        android:text="  sumur batu no.23 rt 03/05"
+        android:textStyle="bold"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/kota"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/alamat"
+        android:text="  jakarta pusat"
+        android:textStyle="bold"
+        android:textSize="20sp"/>
+
+    <EditText
+        android:id="@+id/status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/kota"
+        android:text="   proses"
+        android:textStyle="bold"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/tanggal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/status"
+        android:text="   2021-01-23"
+        android:textStyle="bold"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/jenis_pesanan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tanggal"
+        android:text="   service"
+        android:textStyle="bold"
+        android:textSize="20sp"/>
+
+    <Button
+        android:id="@+id/btndelete"
+        android:layout_marginTop="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/jenis_pesanan"
+        android:text="Delete"
+        android:layout_alignParentEnd="false"
+        android:layout_marginStart="20dp"
+        android:textStyle="bold"
+        android:textSize="15sp"/>
+
+    <Button
+        android:id="@+id/btnback"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/jenis_pesanan"
+        android:layout_alignParentEnd="false"
+        android:layout_marginStart="160dp"
+        android:layout_marginTop="30dp"
+        android:text="Back"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btnupdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/jenis_pesanan"
+        android:text="Update"
+        android:layout_marginTop="30dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="20dp"
+        android:textStyle="bold"
+        android:textSize="15sp"/>
+</RelativeLayout>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.FormActivity">
+
+        <TextView
+            android:id="@+id/tvPesan_Sekarang"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:background="#07CC0F"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:text="Pesan sekarang"/>
+
+        <EditText
+            android:id="@+id/etnama_pemesan"
+            android:layout_marginTop="12dp"
+            android:layout_below="@+id/tvPesan_Sekarang"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="nama pemesan"
+            android:inputType="text"
+            android:drawablePadding="24dp"/>
+
+        <EditText
+            android:id="@+id/etalamat_pemesan"
+            android:layout_marginTop="12dp"
+            android:layout_below="@+id/etnama_pemesan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="alamat pemesan"
+            android:inputType="text"
+            android:drawablePadding="24dp"/>
+
+        <EditText
+            android:id="@+id/etkota_administrasi"
+            android:layout_marginTop="12dp"
+            android:layout_below="@+id/etalamat_pemesan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="kota adminitrasi"
+            android:inputType="text"
+            android:drawablePadding="24dp"/>
+
+        <EditText
+            android:id="@+id/etstatus_pesanan"
+            android:layout_marginTop="12dp"
+            android:layout_below="@+id/etkota_administrasi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="status_pesanan"
+            android:inputType="text"
+            android:drawablePadding="24dp"/>
+
+        <EditText
+            android:id="@+id/ettanggal_pesanan"
+            android:layout_marginTop="12dp"
+            android:layout_below="@+id/etstatus_pesanan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="tanggal_pesanan"
+            android:inputType="text"
+            android:drawablePadding="24dp"/>
+
+        <EditText
+            android:id="@+id/etjenis_pesanan"
+            android:layout_marginTop="12dp"
+            android:layout_below="@+id/ettanggal_pesanan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Username"
+            android:inputType="text"
+            android:drawablePadding="24dp"/>
+
+        <Button
+            android:id="@+id/btnPesan"
+            android:layout_below="@+id/etjenis_pesanan"
+            android:layout_marginTop="20dp"
+            android:background="#07CC0F"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:text="Pesan sekarang"
+            />
+
+    </RelativeLayout>
