@@ -26,6 +26,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     String password;
     String nama;
     APIInterface apiInterface;
+    //cancel
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
