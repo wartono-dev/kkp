@@ -13,14 +13,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAlignment="center"
-        android:background="#4D5FFD"
         android:text="Detail pesanan"
         android:textStyle="bold"
         android:textSize="30dp"/>
 
     <TextView
         android:id="@+id/id_pesanan"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="175dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/detail"
@@ -28,14 +27,14 @@
         android:textStyle="bold"
         android:textSize="20sp"/>
 
-   <TextView
-       android:id="@+id/nama"
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:layout_below="@+id/id_pesanan"
-       android:text="   wibawa bangkit"
-       android:textStyle="bold"
-       android:textSize="20sp"/>
+    <TextView
+        android:id="@+id/nama"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/id_pesanan"
+        android:text="   wibawa bangkit"
+        android:textStyle="bold"
+        android:textSize="20sp"/>
 
     <TextView
         android:id="@+id/alamat"
@@ -47,24 +46,15 @@
         android:textSize="20sp"/>
 
     <TextView
-        android:id="@+id/nomer_kontak_pemesan"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/alamat"
-        android:text="  089659127161"
-        android:textStyle="bold"
-        android:textSize="20sp"/>
-
-    <TextView
         android:id="@+id/kota"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/nomer_kontak_pemesan"
+        android:layout_below="@+id/alamat"
         android:text="  jakarta pusat"
         android:textStyle="bold"
         android:textSize="20sp"/>
 
-    <TextView
+    <EditText
         android:id="@+id/status"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -93,7 +83,7 @@
 
     <TextView
         android:id="@+id/namateknisi"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="50dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/jenis_pesanan"
@@ -106,8 +96,21 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/namateknisi"
-        android:text=" nomer kontak"
+        android:text=" 089659127161"
         android:textStyle="bold"
         android:textSize="20sp"/>
+
+
+    <Button
+        android:id="@+id/btnupdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nomer_kontak"
+        android:text="Update"
+        android:layout_marginTop="30dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="150dp"
+        android:textStyle="bold"
+        android:textSize="15sp"/>
 
 </RelativeLayout>

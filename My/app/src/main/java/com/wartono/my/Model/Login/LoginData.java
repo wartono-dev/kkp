@@ -6,11 +6,11 @@ public class LoginData {
     @SerializedName("id_user")
     private String id_user;
 
-    @SerializedName("name")
-    private String name;
-
     @SerializedName("username")
     private String username;
+
+    @SerializedName("nomer_kontak")
+    private String nomer_kontak;
 
     public void setId_user(String id_user){
 
@@ -27,20 +27,14 @@ public class LoginData {
         return id_user;
     }
 
-    public void setNama(String nama)
-    {
-        this.name = nama;
-    }
-
-    public String getNama(){
-        return name;
-    }
-
     public String getUsername() {
         return username;
     }
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    public String getNomer_kontak() { return nomer_kontak;
     }
 }

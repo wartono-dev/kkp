@@ -1,28 +1,14 @@
-package com.wartono.my.Activity;
+package com.wartono.my.Activity.Konsumen;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
-import android.app.Activity;
-import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.wartono.my.API.APIClient;
-import com.wartono.my.API.APIInterface;
-import com.wartono.my.Adapter.adapter_data;
-import com.wartono.my.LoginActivity;
 import com.wartono.my.Model.Data.ModelData;
-import com.wartono.my.Model.Data.ResponseData;
 import com.wartono.my.R;
 import com.wartono.my.SessionManager;
 
@@ -38,7 +24,6 @@ public class DetilActivity extends AppCompatActivity {
 
     String vid_pesan , vnama_pemesan , valamat_pemesan,
             vkota_administrasi, vtanggal_pesanan, vjenis_pesanan;
-    EditText etstatus_pesanan;
     TextView tvid_pesan , tvnama_pemesan , tvalamat_pemesan,tvstatus_pesanan,
             tvkota_administrasi, tvtanggal_pesanan, tvjenis_pesanan;
 

@@ -4,21 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.FormActivity">
+    tools:context=".Activity.Konsumen.FormActivity">
 
     <TextView
         android:id="@+id/tvPesan_Sekarang"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAlignment="center"
-        android:background="#07CC0F"
+        android:background="#4D5FFD"
         android:textSize="24sp"
         android:textStyle="bold"
         android:text="Pesan sekarang"/>
 
     <EditText
         android:id="@+id/etnama_pemesan"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="30dp"
         android:layout_below="@+id/tvPesan_Sekarang"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -37,9 +37,19 @@
         android:drawablePadding="24dp"/>
 
     <EditText
-        android:id="@+id/etkota_administrasi"
+        android:id="@+id/etnomer_kontak_pemesan"
         android:layout_marginTop="12dp"
         android:layout_below="@+id/etalamat_pemesan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="nomer kontak"
+        android:inputType="text"
+        android:drawablePadding="24dp"/>
+
+    <EditText
+        android:id="@+id/etkota_administrasi"
+        android:layout_marginTop="12dp"
+        android:layout_below="@+id/etnomer_kontak_pemesan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="kota adminitrasi"

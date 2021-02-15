@@ -7,7 +7,7 @@
     android:layout_height="wrap_content"
     app:cardCornerRadius="10dp"
     android:layout_marginStart="20dp"
-    app:cardBackgroundColor="#07CC0F"
+    app:cardBackgroundColor="#4D5FFD"
     android:layout_gravity="center_horizontal"
     android:layout_marginEnd="20dp"
     android:layout_marginTop="15dp">
@@ -64,6 +64,40 @@
                 android:layout_marginStart="7dp"/>
             <TextView
                 android:id="@+id/alamat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:textStyle="normal"
+                android:textSize="12dp"
+                android:textColor="@color/white"
+                android:layout_marginBottom="5dp"
+                android:layout_marginStart="7dp"
+                android:visibility="gone"/>
+            <TextView
+                android:id="@+id/nomer_kontak_pemesan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:textStyle="normal"
+                android:textSize="12dp"
+                android:textColor="@color/white"
+                android:layout_marginBottom="5dp"
+                android:layout_marginStart="7dp"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/nama_teknisi"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="7dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="5dp"
+                android:textColor="@color/white"
+                android:textSize="12dp"
+                android:textStyle="normal"
+                android:visibility="gone" />
+            <TextView
+                android:id="@+id/nomer_kontak"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"

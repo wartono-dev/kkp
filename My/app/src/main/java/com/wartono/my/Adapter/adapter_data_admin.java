@@ -2,6 +2,7 @@ package com.wartono.my.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,8 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.wartono.my.Activity.DetilActivity;
-import com.wartono.my.Activity.UpdateActivity;
+import com.wartono.my.Activity.Admin.UpdateAdmin;
 import com.wartono.my.Model.Data.ModelData;
 import com.wartono.my.R;
 
@@ -41,16 +41,19 @@ import java.util.List;
             holder.tv_id_card.setText(dm.getIdPesan());
             holder.tv_nama.setText(dm.getNamaPemesan());
             holder.tv_alamat.setText(dm.getAlamatPemesan());
+            holder.tv_nomer_kontak_pemesan.setText(dm.getNomerKontakPemesan());
             holder.tv_kota.setText(dm.getKotaAdministrasi());
             holder.tv_tanggal.setText(dm.getTanggalPesanan());
             holder.tv_status.setText(dm.getStatusPesanan());
             holder.tv_jenis.setText(dm.getJenisPesanan());
+            holder.tv_nama_teknisi.setText(dm.getNamaTeknisi());
+            holder.tv_nomer_kontak.setText(dm.getNomerKontak());
 
             holder.cardview.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent i = new Intent(context, UpdateActivity.class);
-                    i.putExtra(UpdateActivity.DATA_DETIL, dm);
+                    Intent i = new Intent(context, UpdateAdmin.class);
+                    i.putExtra(UpdateAdmin.DATA_DETIL, (Parcelable) dm);
                     context.startActivity(i);
                 }
             });
@@ -62,7 +65,7 @@ import java.util.List;
         }
         //menghandle data yang ada didalem cardview list
         public class HolderData extends RecyclerView.ViewHolder{
-            TextView tv_nama, tv_id_card,tv_alamat, tv_jenis, tv_kota, tv_status, tv_tanggal;
+            TextView tv_nama, tv_id_card,tv_alamat, tv_nomer_kontak_pemesan, tv_jenis, tv_kota, tv_status, tv_tanggal, tv_nama_teknisi, tv_nomer_kontak;
             CardView cardview;
             public HolderData(@NonNull View itemView) {
                 super(itemView);
@@ -70,10 +73,14 @@ import java.util.List;
                 tv_nama = itemView.findViewById(R.id.tv_listnama);
                 tv_id_card = itemView.findViewById(R.id.id_item);
                 tv_alamat = itemView.findViewById(R.id.alamat);
+                tv_nama_teknisi = itemView.findViewById(R.id.nama_teknisi);
+                tv_nomer_kontak = itemView.findViewById(R.id.nomer_kontak);
+                tv_nomer_kontak_pemesan = (TextView) itemView.findViewById(R.id.nomer_kontak_pemesan);
                 tv_jenis = (TextView) itemView.findViewById(R.id.jenis_pesanan);
                 tv_kota = (TextView) itemView.findViewById(R.id.kota);
                 tv_status = (TextView) itemView.findViewById(R.id.list_status);
                 tv_tanggal = (TextView) itemView.findViewById(R.id.tgl);
+
 
             }
         }

@@ -16,7 +16,7 @@
 
     <EditText
         android:id="@+id/etRegisterUsername"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="100dp"
         android:layout_below="@+id/tvPleaseCreateAccount"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -25,12 +25,12 @@
         android:drawablePadding="24dp"/>
 
     <EditText
-        android:id="@+id/etRegisterName"
+        android:id="@+id/etRegisternomer_kontak"
         android:layout_below="@+id/etRegisterUsername"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:hint="Your Name"
+        android:hint="Nomer Hp"
         android:drawableStart="@drawable/ic_person_24"
         android:drawablePadding="24dp"
         android:inputType="textPassword"/>
@@ -38,7 +38,7 @@
 
     <EditText
         android:id="@+id/etRegisterPassword"
-        android:layout_below="@+id/etRegisterName"
+        android:layout_below="@+id/etRegisternomer_kontak"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"

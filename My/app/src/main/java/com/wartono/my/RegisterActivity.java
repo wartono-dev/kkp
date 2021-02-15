@@ -19,12 +19,12 @@ import com.wartono.my.Model.Register.ResponseRegister;
 
 public class RegisterActivity extends AppCompatActivity implements View.OnClickListener{
 
-    EditText etUsername, etPassword,etName;
+    EditText etUsername, etPassword,etNomer_kontak;
     Button btnRegister;
     TextView tvLoginn;
     String username;
     String password;
-    String nama;
+    String nomer_kontak;
     APIInterface apiInterface;
     //cancel
 
@@ -35,7 +35,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
         etUsername = findViewById(R.id.etRegisterUsername);
         etPassword = findViewById(R.id.etRegisterPassword);
-        etName = findViewById(R.id.etRegisterName);
+        etNomer_kontak = findViewById(R.id.etRegisternomer_kontak);
 
         tvLoginn = findViewById(R.id.tvLogin);
         tvLoginn.setOnClickListener(this);
@@ -50,9 +50,9 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         switch (v.getId()) {
             case R.id.btnRegister:
                 username = etUsername.getText().toString();
-                nama = etName.getText().toString();
+                nomer_kontak = etNomer_kontak.getText().toString();
                 password = etPassword.getText().toString();
-                register(username, nama, password);
+                register(username, nomer_kontak, password);
                 break;
 
             case R.id.tvLogin:

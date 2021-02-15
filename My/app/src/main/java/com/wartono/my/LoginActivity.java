@@ -16,8 +16,8 @@ import android.widget.TextView;
 
 import com.wartono.my.API.APIClient;
 import com.wartono.my.API.APIInterface;
-import com.wartono.my.Activity.MainActivity;
-import com.wartono.my.Activity.MainAdmin;
+import com.wartono.my.Activity.Admin.MainAdmin;
+import com.wartono.my.Activity.Konsumen.MainActivity;
 import com.wartono.my.Model.Login.LoginData;
 import com.wartono.my.Model.Login.Mlogin;
 
@@ -79,7 +79,7 @@ public class LoginActivity extends AppCompatActivity {
                         LoginData loginData = response.body().getLoginData();
                         sessionManager.createLoginSession(loginData);
                         progressDialog.dismiss();
-                        if (sessionManager.isLoggedIn() && !sessionManager.getUsername().equals("wawa")) {
+                        if (sessionManager.isLoggedIn() && !sessionManager.getUsername().equals("wartono")) {
                             progressDialog.dismiss();
                             startActivity(new Intent(getApplicationContext(), MainActivity.class).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP));
                             finish();

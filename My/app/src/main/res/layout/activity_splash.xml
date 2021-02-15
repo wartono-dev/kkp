@@ -6,14 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".SplashActivity">
 
-    <TextView
-        android:id="@+id/tvNagaganda"
+
+
+    <ImageView
+        android:id="@+id/logo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:textSize="48dp"
-        android:textStyle="bold"
-        android:text="Nagaganda"/>
+        android:src="@drawable/logo_ng_utama"
+        />
 
 
 </RelativeLayout>

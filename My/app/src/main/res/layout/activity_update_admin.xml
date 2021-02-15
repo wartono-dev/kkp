@@ -4,23 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.Konsumen.DetilActivity">
-
-
+    tools:context=".Activity.Admin.UpdateAdmin">
 
     <TextView
         android:id="@+id/detail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAlignment="center"
-        android:background="#4D5FFD"
-        android:text="Detail pesanan"
+        android:text="Detail "
         android:textStyle="bold"
         android:textSize="30dp"/>
 
     <TextView
-        android:id="@+id/id_pesanan"
-        android:layout_marginTop="100dp"
+        android:id="@+id/id_pesan"
+        android:layout_marginTop="175dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/detail"
@@ -28,14 +25,14 @@
         android:textStyle="bold"
         android:textSize="20sp"/>
 
-   <TextView
-       android:id="@+id/nama"
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:layout_below="@+id/id_pesanan"
-       android:text="   wibawa bangkit"
-       android:textStyle="bold"
-       android:textSize="20sp"/>
+    <TextView
+        android:id="@+id/nama"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/id_pesan"
+        android:text="   wibawa bangkit"
+        android:textStyle="bold"
+        android:textSize="20sp"/>
 
     <TextView
         android:id="@+id/alamat"
@@ -51,7 +48,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/alamat"
-        android:text="  089659127161"
+        android:text=" 089659127161 "
         android:textStyle="bold"
         android:textSize="20sp"/>
 
@@ -64,7 +61,7 @@
         android:textStyle="bold"
         android:textSize="20sp"/>
 
-    <TextView
+    <EditText
         android:id="@+id/status"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -88,26 +85,61 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/tanggal"
         android:text="   service"
-        android:textStyle="bold"
-        android:textSize="20sp"/>
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/namateknisi"
-        android:layout_marginTop="100dp"
+    <EditText
+        android:id="@+id/nama_teknisi"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/jenis_pesanan"
         android:text=" nama teknisi"
-        android:textStyle="bold"
-        android:textSize="20sp"/>
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
-    <TextView
+    <EditText
         android:id="@+id/nomer_kontak"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/namateknisi"
-        android:text=" nomer kontak"
+        android:layout_below="@+id/nama_teknisi"
+        android:text=" 089659127161"
         android:textStyle="bold"
         android:textSize="20sp"/>
+
+    <Button
+        android:id="@+id/btndelete"
+        android:layout_marginTop="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nomer_kontak"
+        android:text="Delete"
+        android:layout_alignParentEnd="false"
+        android:layout_marginStart="20dp"
+        android:textStyle="bold"
+        android:textSize="15sp"/>
+
+    <Button
+        android:id="@+id/btnback"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nomer_kontak"
+        android:layout_alignParentEnd="false"
+        android:layout_marginStart="160dp"
+        android:layout_marginTop="30dp"
+        android:text="Back"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btnupdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nomer_kontak"
+        android:text="Update"
+        android:layout_marginTop="30dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="20dp"
+        android:textStyle="bold"
+        android:textSize="15sp"/>
 
 </RelativeLayout>

@@ -19,7 +19,7 @@ public class SessionManager {
     public static final String IS_LOGGED_IN = "isLoggedIn";
     public static final String USER_ID = "id_user";
     public static final String USERNAME = "username";
-    public static final String NAME = "nama";
+    public static final String NOMER_KONTAK = "nomer_kontak";
 
     @SuppressLint("CommitPrefEdits")
     public SessionManager (Context context){
@@ -32,7 +32,7 @@ public class SessionManager {
         editor.putBoolean(IS_LOGGED_IN, true);
         editor.putString(USER_ID, user.getId_user());
         editor.putString(USERNAME, user.getUsername());
-        editor.putString(NAME, user.getNama());
+        editor.putString(NOMER_KONTAK, user.getNomer_kontak());
         editor.commit();
     }
 
@@ -40,7 +40,7 @@ public class SessionManager {
         HashMap<String,String> user = new HashMap<>();
         user.put(USER_ID, sharedPreferences.getString(USER_ID,null));
         user.put(USERNAME, sharedPreferences.getString(USERNAME,null));
-        user.put(NAME, sharedPreferences.getString(NAME,null));
+        user.put(NOMER_KONTAK, sharedPreferences.getString(NOMER_KONTAK,null));
         return user;
     }
 
@@ -64,7 +64,7 @@ public class SessionManager {
 
     public String getUsername(){
         HashMap<String, String> user = getUserDetail();
-        Log.d("XXXTAG", "getNIM " + user.get(SessionManager.USERNAME));
+        Log.d("XXXTAG", "getUsername " + user.get(SessionManager.USERNAME));
         return user.get(SessionManager.USERNAME);
     }
 
