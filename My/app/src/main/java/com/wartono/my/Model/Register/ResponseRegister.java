@@ -13,7 +13,7 @@ public class ResponseRegister {
 	@SerializedName("status")
 	private boolean status;
 
-	public ResponseRegister(String username, String name, String password) {
+	public ResponseRegister(String username, String nomer_kontak, String password) {
 
 	}
 

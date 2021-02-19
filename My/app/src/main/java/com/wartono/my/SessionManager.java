@@ -75,4 +75,6 @@ public class SessionManager {
         editor.commit();
     }
 
+    public void logoutUser() {
+    }
 }

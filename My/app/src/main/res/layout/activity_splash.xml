@@ -6,14 +6,24 @@
     android:layout_height="match_parent"
     tools:context=".SplashActivity">
 
-
-
     <ImageView
         android:id="@+id/logo"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="300dp"
         android:src="@drawable/logo_ng_utama"
         />
+
+    <TextView
+        android:id="@+id/Naga_Service"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/logo"
+        android:text="Naga Service"
+        android:textAlignment="center"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        />
+
 
 
 </RelativeLayout>

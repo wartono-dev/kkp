@@ -64,9 +64,9 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
     }
 
-        private void register (String username, String name,String password) {
+        private void register (String username, String nomer_kontak,String password) {
         apiInterface = APIClient.getClient().create(APIInterface.class);
-            Call<ResponseRegister> loginCall = apiInterface.RegisterResponse(username, name, password);
+            Call<ResponseRegister> loginCall = apiInterface.RegisterResponse(username, nomer_kontak, password);
             loginCall.enqueue(new Callback<ResponseRegister>() {
                 @Override
                 public void onResponse(Call<ResponseRegister> call, Response<ResponseRegister> response) {

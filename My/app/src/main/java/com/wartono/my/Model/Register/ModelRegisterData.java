@@ -6,8 +6,8 @@ public class ModelRegisterData {
 	@SerializedName("id_user")
 	private String id_user;
 
-	@SerializedName("name")
-	private String name;
+	@SerializedName("nomer_kontak")
+	private String nomer_kontak;
 
 	@SerializedName("username")
 	private String username;
@@ -24,12 +24,12 @@ public class ModelRegisterData {
 
 	public void setName(String name)
 	{
-		this.name = name;
+		this.nomer_kontak = nomer_kontak;
 	}
 
 	public String getName()
 	{
-		return name;
+		return nomer_kontak;
 	}
 
 	public void setUsername(String username){

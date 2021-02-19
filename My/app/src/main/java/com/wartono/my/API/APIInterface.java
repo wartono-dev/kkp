@@ -25,7 +25,7 @@ public interface APIInterface {
      @POST("register.php")
      Call<ResponseRegister> RegisterResponse(
              @Field("username") String username,
-             @Field("name") String name,
+             @Field("nomer_kontak") String nomer_kontak,
              @Field("password") String password
      );
 

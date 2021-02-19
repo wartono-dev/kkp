@@ -85,8 +85,6 @@ public class UpdateAdmin extends AppCompatActivity {
         nama_teknisi = modelData.getNamaTeknisi();
         nomer_kontak = modelData.getNomerKontak();
 
-
-
         tvid_pesan.setText(vid_pesan);
         tvnama_pemesan.setText(vnama_pemesan);
         tvalamat_pemesan.setText(valamat_pemesan);

@@ -1,8 +1,10 @@
 <resources>
-    <string name="app_name">Naga Service</string>
     <item name="tv_id_pesan" type="id" />
     <item name="tvnama_teknisi" type="id" />
     <item name="tvnomer_kontak_pemesan" type="id" />
     <item name="tvnomer_kontak" type="id" />
     <item name="etnomer_kontak_pemesan" type="id" />
+    <string name="app_name">Naga Service</string>
+    <string name="menu_Paket" />
+    <string name="header_name" />
 </resources>
