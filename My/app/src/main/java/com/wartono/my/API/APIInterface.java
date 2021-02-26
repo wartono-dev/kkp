@@ -45,9 +45,7 @@ public interface APIInterface {
      @POST("update_data.php")
      Call<ResponseData> updateData(
              @Field("id_pesan") String id_pesan,
-             @Field("status_pesanan") String status_pesanan,
-             @Field("nama_teknisi") String nama_teknisi,
-             @Field("nomer_kontak") String nomer_kontak
+             @Field("status_pesanan") String status_pesanan
      );
 
      @FormUrlEncoded

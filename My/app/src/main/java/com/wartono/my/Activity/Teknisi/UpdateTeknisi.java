@@ -20,16 +20,20 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+import static com.wartono.my.R.id.id_pesan;
+import static com.wartono.my.R.id.jenis_pesanan;
+
 public class UpdateTeknisi extends AppCompatActivity {
     public static String DATA_DETIL;
-    String vid_pesan;
-    String vnama, valamat, vnomer_kontak_pemesan, vkota, vtanggal, vjenis, vnama_teknisi, vnomer_kontak;
-    EditText etstatus;
-    TextView tvid_pesan, tvnama, tvalamat, tvnomer_kontak_pemesan, tvkota, tvtanggal, tvjenis, tvstatus,
-    tvnama_teknisi, tvnomer_kontak;
+    String  vid_pesan , vnama_pemesan , valamat_pemesan, vnomer_kontak_pemesan,
+            vkota_administrasi, vtanggal_pesanan, vjenis_pesanan,vnama_teknisi, vnomer_kontak;
+    String status_pesanan;
+    EditText etstatus_pesanan;
+    TextView tvid_pesan , tvnama_pemesan , tvalamat_pemesan, tvnomer_kontak_pemesan,
+            tvkota_administrasi, tvtanggal_pesanan, tvjenis_pesanan,tvnama_teknisi, tvnomer_kontak;
     Button btnupdate;
 
-    String status;
+
     public static final String DATA_DETAIL = "string_extra";
     ModelData modelData;
     private ModelData getModelData;
@@ -41,40 +45,40 @@ public class UpdateTeknisi extends AppCompatActivity {
 
         btnupdate = findViewById(R.id.btnupdate);
 
-        tvid_pesan = findViewById(R.id.tv_id_pesan);
-        tvnama = findViewById(R.id.tvnama_pemesan);
-        tvalamat = findViewById(R.id.tvalamat_pemesan);
-        tvnomer_kontak_pemesan = findViewById(R.id.tvnomer_kontak_pemesan);
-        tvkota = findViewById(R.id.tvkota_adminitrasi);
-        tvtanggal = findViewById(R.id.tvtanggal_pesanan);
-        tvjenis = findViewById(R.id.tvjenis_pesanan);
-        tvstatus = findViewById(R.id.tvstatus_pesanan);
-        tvnama_teknisi = findViewById(R.id.tvnama_teknisi);
-        tvnomer_kontak = findViewById(R.id.tvnomer_kontak);
+        tvid_pesan = findViewById(id_pesan);
+        tvnama_pemesan = findViewById(R.id.nama);
+        tvalamat_pemesan = findViewById(R.id.alamat);
+        tvnomer_kontak_pemesan = findViewById(R.id.nomer_kontak_pemesan);
+        tvkota_administrasi = findViewById(R.id.kota);
+        tvtanggal_pesanan = findViewById(R.id.tanggal);
+        tvjenis_pesanan = findViewById(jenis_pesanan);
+        etstatus_pesanan = findViewById(R.id.status);
+        tvnama_teknisi = findViewById(R.id.nama_teknisi);
+        tvnomer_kontak = findViewById(R.id.nomer_kontak);
 
         modelData = getIntent().getParcelableExtra(DATA_DETAIL);
-        vid_pesan = modelData .getIdPesan();
-        vnama = modelData .getNamaPemesan();
-        valamat = modelData .getAlamatPemesan();
-        vnomer_kontak_pemesan = modelData .getNomerKontakPemesan();
-        vkota = modelData .getKotaAdministrasi();
-        vtanggal = modelData .getTanggalPesanan();
-        vjenis = modelData .getJenisPesanan();
-        vnama_teknisi = modelData .getNamaTeknisi();
-        vnomer_kontak = modelData .getNomerKontak();
-        status = modelData .getStatusPesanan();
+        vid_pesan = modelData.getIdPesan();
+        vnama_pemesan = modelData.getNamaPemesan();
+        valamat_pemesan = modelData.getAlamatPemesan();
+        vnomer_kontak_pemesan = modelData.getNomerKontakPemesan();
+        vkota_administrasi = modelData.getKotaAdministrasi();
+        vtanggal_pesanan = modelData.getTanggalPesanan();
+        vjenis_pesanan = modelData.getJenisPesanan();
+        status_pesanan = modelData.getStatusPesanan();
+        vnama_teknisi = modelData.getNamaTeknisi();
+        vnomer_kontak = modelData.getNomerKontak();
+
 
         tvid_pesan.setText(vid_pesan);
-        tvnama.setText(vnama);
-        tvalamat.setText(valamat);
+        tvnama_pemesan.setText(vnama_pemesan);
+        tvalamat_pemesan.setText(valamat_pemesan);
         tvnomer_kontak_pemesan.setText(vnomer_kontak_pemesan);
-        tvkota.setText(vkota);
-        tvtanggal.setText(vtanggal);
-        tvjenis.setText(vjenis);
-        tvstatus.setText(status);
+        tvkota_administrasi.setText(vkota_administrasi);
+        tvtanggal_pesanan.setText(vtanggal_pesanan);
+        tvjenis_pesanan.setText(vjenis_pesanan);
+        etstatus_pesanan.setText(status_pesanan);
         tvnama_teknisi.setText(vnama_teknisi);
         tvnomer_kontak.setText(vnomer_kontak);
-        etstatus.setText(status);
 
         btnupdate.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,9 +92,9 @@ public class UpdateTeknisi extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         tvid_pesan.getText().toString();
-                        status = etstatus.getText().toString();
-                        if (etstatus.equals("")) {
-                            etstatus.setError("Tidak Boleh Kosong");
+                        status_pesanan = etstatus_pesanan.getText().toString();
+                        if (etstatus_pesanan.equals("")) {
+                            etstatus_pesanan.setError("Tidak Boleh Kosong");
                         } else {
                             UpdateTeknisi();
                         }
@@ -98,7 +102,7 @@ public class UpdateTeknisi extends AppCompatActivity {
 
                     private void UpdateTeknisi() {
                         APIInterface ardData = APIClient.getClient().create(APIInterface.class);
-                        Call<ResponseData> UpdateTeknisi = ardData.updateTeknisi(vid_pesan, status);
+                        Call<ResponseData> UpdateTeknisi = ardData.updateTeknisi(vid_pesan, status_pesanan);
                         UpdateTeknisi.enqueue(new Callback<ResponseData>() {
                             @Override
                             public void onResponse(Call<ResponseData> call, Response<ResponseData> response) {
@@ -106,6 +110,7 @@ public class UpdateTeknisi extends AppCompatActivity {
                                 String message = response.body().getMessage();
                                 Log.d("SERVER_KODE", String.valueOf(kode));
                                 Log.d("SERVER_PESAN", String.valueOf(message));
+                                Log.d("SERVER_STATUS", modelData.getStatusPesanan());
                                 finish();
                             }
 

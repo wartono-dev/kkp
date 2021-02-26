@@ -4,6 +4,7 @@
     <item name="tvnomer_kontak_pemesan" type="id" />
     <item name="tvnomer_kontak" type="id" />
     <item name="etnomer_kontak_pemesan" type="id" />
+    <item name="status_pesanan" type="id" />
     <string name="app_name">Naga Service</string>
     <string name="menu_Paket" />
     <string name="header_name" />

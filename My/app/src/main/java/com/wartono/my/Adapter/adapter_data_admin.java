@@ -8,15 +8,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
-import androidx.cardview.widget.CardView;
-import androidx.recyclerview.widget.RecyclerView;
-
 import com.wartono.my.Activity.Admin.UpdateAdmin;
 import com.wartono.my.Model.Data.ModelData;
 import com.wartono.my.R;
 
 import java.util.List;
+
+import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
+import androidx.recyclerview.widget.RecyclerView;
 
 
 
@@ -65,7 +65,8 @@ import java.util.List;
         }
         //menghandle data yang ada didalem cardview list
         public class HolderData extends RecyclerView.ViewHolder{
-            TextView tv_nama, tv_id_card,tv_alamat, tv_nomer_kontak_pemesan, tv_jenis, tv_kota, tv_status, tv_tanggal, tv_nama_teknisi, tv_nomer_kontak;
+            TextView tv_nama, tv_id_card,tv_alamat, tv_nomer_kontak_pemesan, tv_jenis, tv_kota,
+                    tv_status, tv_tanggal, tv_nama_teknisi, tv_nomer_kontak;
             CardView cardview;
             public HolderData(@NonNull View itemView) {
                 super(itemView);

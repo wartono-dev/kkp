@@ -168,7 +168,7 @@ public class UpdateAdmin extends AppCompatActivity {
 
     private void updateData(){
         APIInterface ardData = APIClient.getClient().create(APIInterface.class);
-        Call<ResponseData> updateData = ardData.updateData( vid_pesan, status_pesanan, nama_teknisi, nomer_kontak);
+        Call<ResponseData> updateData = ardData.updateData( vid_pesan, status_pesanan);
 
         updateData.enqueue(new Callback<ResponseData>() {
             @Override

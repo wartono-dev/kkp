@@ -20,7 +20,7 @@
         android:textSize="30dp"/>
 
     <TextView
-        android:id="@+id/id_pesan"
+        android:id="@+id/idpesan"
         android:layout_marginTop="50dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -33,7 +33,7 @@
         android:id="@+id/nama"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/id_pesan"
+        android:layout_below="@+id/idpesan"
         android:text="   wibawa bangkit"
         android:textStyle="bold"
         android:textSize="20sp"/>
@@ -75,7 +75,7 @@
         android:textSize="20sp"/>
 
     <TextView
-        android:id="@+id/jenis_pesanan"
+        android:id="@+id/jenispesanan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tanggal"
@@ -88,13 +88,13 @@
         android:layout_marginTop="50dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/jenis_pesanan"
+        android:layout_below="@+id/jenispesanan"
         android:text=" nama teknisi"
         android:textStyle="bold"
         android:textSize="20sp"/>
 
     <TextView
-        android:id="@+id/nomer_kontak"
+        android:id="@+id/nomerkontak"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/namateknisi"

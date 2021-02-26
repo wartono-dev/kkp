@@ -12,6 +12,7 @@ import com.wartono.my.API.APIClient;
 import com.wartono.my.API.APIInterface;
 import com.wartono.my.Activity.Admin.MainAdmin;
 import com.wartono.my.Activity.Konsumen.MainActivity;
+import com.wartono.my.Activity.Teknisi.MainTeknisi;
 import com.wartono.my.Model.Login.LoginData;
 import com.wartono.my.Model.Login.Mlogin;
 
@@ -72,15 +73,20 @@ public class LoginActivity extends AppCompatActivity {
                         LoginData loginData = response.body().getLoginData();
                         sessionManager.createLoginSession(loginData);
                         progressDialog.dismiss();
-                        if (sessionManager.isLoggedIn() && !sessionManager.getUsername().equals("Admin")) {
-                            progressDialog.dismiss();
-                            startActivity(new Intent(getApplicationContext(), MainActivity.class).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP));
-                            finish();
-                        } else {
+                        if (sessionManager.isLoggedIn() && sessionManager.getUsername().equals("Admin")) {
                             progressDialog.dismiss();
                             startActivity(new Intent(getApplicationContext(), MainAdmin.class).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP));
                             finish();
-                        }
+                        } else
+                            if (sessionManager.isLoggedIn() && sessionManager.getUsername().equals("Teknisi1")) {
+                            progressDialog.dismiss();
+                            startActivity(new Intent(getApplicationContext(), MainTeknisi.class).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP));
+                            finish();
+                        } else {
+                           progressDialog.dismiss();
+                           startActivity(new Intent(getApplicationContext(), MainActivity.class).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP));
+                            finish();
+                     }
 
                     } else {
                         Log.d("SERVER_GAGAL ::",response.body().getMessage());
