@@ -1,15 +1,9 @@
 package com.wartono.my;
 
-import androidx.appcompat.app.AppCompatActivity;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -20,6 +14,11 @@ import com.wartono.my.Activity.Admin.MainAdmin;
 import com.wartono.my.Activity.Konsumen.MainActivity;
 import com.wartono.my.Model.Login.LoginData;
 import com.wartono.my.Model.Login.Mlogin;
+
+import androidx.appcompat.app.AppCompatActivity;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 
 public class LoginActivity extends AppCompatActivity {
@@ -43,23 +42,17 @@ public class LoginActivity extends AppCompatActivity {
         etUsername = findViewById(R.id.etUsername);
         etPassword = findViewById(R.id.etPassword);
         btnLogin   = findViewById(R.id.btnLogin);
-        btnLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                username = etUsername.getText().toString();
-                password = etPassword.getText().toString();
-                progressDialog.show();
-                Login (username,password);
-            }
+        btnLogin.setOnClickListener(v -> {
+            username = etUsername.getText().toString();
+            password = etPassword.getText().toString();
+            progressDialog.show();
+            Login (username,password);
         });
 
         tvRegister = findViewById(R.id.tvCreateAccount);
-        tvRegister.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent Intent = new Intent (LoginActivity.this,RegisterActivity.class);
-                startActivity(Intent);
-            }
+        tvRegister.setOnClickListener(v -> {
+            Intent Intent = new Intent (LoginActivity.this,RegisterActivity.class);
+            startActivity(Intent);
         });
     }
 
@@ -75,11 +68,11 @@ public class LoginActivity extends AppCompatActivity {
                         String pesan = response.body().getMessage();
                         Log.d("SERVER_KODE ::",String.valueOf(status));
                         Log.d("SERVER_BERHASIL :",pesan);
-                        sessionManager = new SessionManager(LoginActivity.this);
+                        sessionManager= new SessionManager(LoginActivity.this);
                         LoginData loginData = response.body().getLoginData();
                         sessionManager.createLoginSession(loginData);
                         progressDialog.dismiss();
-                        if (sessionManager.isLoggedIn() && !sessionManager.getUsername().equals("wartono")) {
+                        if (sessionManager.isLoggedIn() && !sessionManager.getUsername().equals("Admin")) {
                             progressDialog.dismiss();
                             startActivity(new Intent(getApplicationContext(), MainActivity.class).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP));
                             finish();

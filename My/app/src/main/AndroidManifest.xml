@@ -10,8 +10,9 @@
         android:roundIcon="@drawable/logo_ng_utama"
         android:supportsRtl="true"
         android:theme="@style/Theme.My">
-        <activity android:name=".Profil"></activity>
-        <activity android:name=".ListHarga" />
+        <activity android:name=".Activity.Teknisi.MainTeknisi">
+
+        </activity>
         <activity android:name=".Activity.Teknisi.UpdateTeknisi" />
         <activity android:name=".Activity.Admin.UpdateAdmin" />
         <activity android:name=".Activity.Admin.MainAdmin" />

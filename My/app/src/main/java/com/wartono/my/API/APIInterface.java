@@ -42,14 +42,7 @@ public interface APIInterface {
      );
 
      @FormUrlEncoded
-     @POST("uodate_data.php")
-     Call<ResponseData> EditData(
-             @Field("id_pesan") String vid,
-             @Field("status_pesanan") String status
-     );
-
-     @FormUrlEncoded
-     @POST("detil_data_admin.php")
+     @POST("update_data.php")
      Call<ResponseData> updateData(
              @Field("id_pesan") String id_pesan,
              @Field("status_pesanan") String status_pesanan,
@@ -64,12 +57,11 @@ public interface APIInterface {
      );
 
      @FormUrlEncoded
-     @POST("detail_data_admin.php")
-     Call<ResponseData> updateAdmin(
+     @POST("update_data.php")
+     Call<ResponseData> updateTeknisi(
              @Field("id_pesan") String id_pesan,
-             @Field("status_pesanan") String status_pesanan,
-             @Field("nama_taknisi") String nama_teknisi,
-             @Field("nomer_kontak") String nomer_kontak);
+             @Field("status_pesanan") String status_pesanan
+     );
 
      @GET("read_data.php")
      Call<ResponseData> Read_data(
@@ -82,5 +74,4 @@ public interface APIInterface {
              @Query("nama_teknisi") String nama_teknisi,
              @Query("nomer_kontak") String nomer_kontak
      );
-
 }

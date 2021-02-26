@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="10dp"
     tools:context=".Activity.Admin.UpdateAdmin">
 
     <TextView
@@ -11,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAlignment="center"
-        android:text="Detail "
+        android:text="Detail Admin "
         android:textStyle="bold"
         android:textSize="30dp"/>
 
@@ -113,22 +114,11 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/nomer_kontak"
         android:text="Delete"
+        android:layout_margin="20dp"
         android:layout_alignParentEnd="false"
-        android:layout_marginStart="20dp"
         android:textStyle="bold"
         android:textSize="15sp"/>
 
-    <Button
-        android:id="@+id/btnback"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/nomer_kontak"
-        android:layout_alignParentEnd="false"
-        android:layout_marginStart="135dp"
-        android:layout_marginTop="30dp"
-        android:text="Back"
-        android:textSize="15sp"
-        android:textStyle="bold" />
 
     <Button
         android:id="@+id/btnupdate"
@@ -136,9 +126,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/nomer_kontak"
         android:text="Update"
+        android:layout_margin="20dp"
         android:layout_marginTop="30dp"
         android:layout_alignParentEnd="true"
-        android:layout_marginEnd="20dp"
         android:textStyle="bold"
         android:textSize="15sp"/>
 

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="30dp"
     tools:context=".Activity.Konsumen.FormActivity">
 
     <TextView
@@ -80,9 +81,11 @@
         android:id="@+id/btnPesan"
         android:layout_below="@+id/etjenis_pesanan"
         android:layout_marginTop="20dp"
-        android:background="#07CC0F"
+        android:background="#4D5FFD"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
         android:textAlignment="center"
         android:textSize="24sp"
         android:textStyle="bold"

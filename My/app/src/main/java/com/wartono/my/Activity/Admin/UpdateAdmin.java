@@ -1,11 +1,5 @@
 package com.wartono.my.Activity.Admin;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.RecyclerView;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -29,6 +23,12 @@ import com.wartono.my.SessionManager;
 
 import java.util.List;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 import static com.wartono.my.Activity.Teknisi.UpdateTeknisi.DATA_DETAIL;
 import static com.wartono.my.R.id.id_pesan;
 import static com.wartono.my.R.id.jenis_pesanan;
@@ -47,9 +47,9 @@ public class UpdateAdmin extends AppCompatActivity {
     String vid_pesan , vnama_pemesan , valamat_pemesan, vnomer_kontak_pemesan,
             vkota_administrasi, vtanggal_pesanan, vjenis_pesanan;
     EditText etstatus_pesanan,etnama_teknisi, etnomer_kontak;
-    TextView tvid_pesan , tvnama_pemesan , tvalamat_pemesan, tvnomer_kontak_pemesan, tvstatus_pesanan,
-            tvkota_administrasi, tvtanggal_pesanan, tvjenis_pesanan, tvnama_teknisi, tvnomer_kontak;
-    Button btndelete, btnupdate, btnback;
+    TextView tvid_pesan , tvnama_pemesan , tvalamat_pemesan, tvnomer_kontak_pemesan,
+            tvkota_administrasi, tvtanggal_pesanan, tvjenis_pesanan;
+    Button btndelete, btnupdate;
     String status_pesanan, nama_teknisi, nomer_kontak;
 
     public static final String DATA_DETIL ="string_extra";
@@ -61,7 +61,7 @@ public class UpdateAdmin extends AppCompatActivity {
 
         btndelete = findViewById(R.id.btndelete);
         btnupdate = findViewById(R.id.btnupdate);
-        btnback = findViewById(R.id.btnback);
+
         tvid_pesan = findViewById(id_pesan);
         tvnama_pemesan = findViewById(R.id.nama);
         tvalamat_pemesan = findViewById(R.id.alamat);
@@ -95,14 +95,6 @@ public class UpdateAdmin extends AppCompatActivity {
         etstatus_pesanan.setText(status_pesanan);
         etnama_teknisi.setText(nama_teknisi);
         etnomer_kontak.setText(nomer_kontak);
-
-        btnback.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent kembali = new Intent(UpdateAdmin.this, MainAdmin.class);
-                startActivity(kembali);
-            }
-        });
 
         btnupdate.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -175,8 +167,8 @@ public class UpdateAdmin extends AppCompatActivity {
 
 
     private void updateData(){
-        APIInterface ardupdate = APIClient.getClient().create(APIInterface.class);
-        Call<ResponseData> updateData = ardupdate.updateData( vid_pesan, status_pesanan, nama_teknisi, nomer_kontak);
+        APIInterface ardData = APIClient.getClient().create(APIInterface.class);
+        Call<ResponseData> updateData = ardData.updateData( vid_pesan, status_pesanan, nama_teknisi, nomer_kontak);
 
         updateData.enqueue(new Callback<ResponseData>() {
             @Override
@@ -185,6 +177,10 @@ public class UpdateAdmin extends AppCompatActivity {
                 String pesan= response.body().getMessage();
                 Log.d("SERVER_KODE",String.valueOf(kode));
                 Log.d("SERVER_PESAN",pesan);
+                Log.d("SERVER_ID" , modelData.getIdPesan());
+                Log.d("SERVER_STATUS", modelData.getStatusPesanan());
+                Log.d("SERVER_TEKNISI", modelData.getNamaTeknisi());
+                Log.d("SERVER_NOMER", modelData.getNomerKontak());
 
 //                Toast.makeText(UbahActivity.this, "DataLogin Berhasil Diubah", Toast.LENGTH_SHORT).show();
                 finish();

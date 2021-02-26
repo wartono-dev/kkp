@@ -1,24 +1,22 @@
 package com.wartono.my.Activity.Konsumen;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
-
 import android.widget.Toast;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-
 
 import com.wartono.my.API.APIClient;
 import com.wartono.my.API.APIInterface;
 import com.wartono.my.Model.Data.ResponseData;
 import com.wartono.my.R;
+
+import androidx.appcompat.app.AppCompatActivity;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class FormActivity extends AppCompatActivity  {
 
@@ -92,7 +90,7 @@ public class FormActivity extends AppCompatActivity  {
                 Log.d("SERVER_KODE", String.valueOf(kode));
                 Log.d("SERVER_PESAN", String.valueOf(pesan));
 
-                Toast.makeText(FormActivity.this, "DataLogin Berhasil Disimpan", Toast.LENGTH_SHORT).show();
+                Toast.makeText(FormActivity.this, "Data Berhasil Disimpan", Toast.LENGTH_SHORT).show();
                 finish();
 
             }

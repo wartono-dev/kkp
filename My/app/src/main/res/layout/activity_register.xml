@@ -31,9 +31,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:hint="Nomer Hp"
-        android:drawableStart="@drawable/ic_person_24"
-        android:drawablePadding="24dp"
-        android:inputType="textPassword"/>
+        android:drawableStart="@drawable/ic_call_24"
+        android:drawablePadding="24dp" />
 
 
     <EditText
@@ -52,7 +51,13 @@
         android:layout_below="@+id/etRegisterPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Register"/>
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:hint="Register"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:text="Register"/>
 
     <TextView
         android:id="@+id/tvLogin"

@@ -22,10 +22,10 @@ import retrofit2.Response;
 
 public class UpdateTeknisi extends AppCompatActivity {
     public static String DATA_DETIL;
-    String vid;
+    String vid_pesan;
     String vnama, valamat, vnomer_kontak_pemesan, vkota, vtanggal, vjenis, vnama_teknisi, vnomer_kontak;
     EditText etstatus;
-    TextView tvid, tvnama, tvalamat, tvnomer_kontak_pemesan, tvkota, tvtanggal, tvjenis, tvstatus,
+    TextView tvid_pesan, tvnama, tvalamat, tvnomer_kontak_pemesan, tvkota, tvtanggal, tvjenis, tvstatus,
     tvnama_teknisi, tvnomer_kontak;
     Button btnupdate;
 
@@ -38,8 +38,10 @@ public class UpdateTeknisi extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update_teknisi);
+
         btnupdate = findViewById(R.id.btnupdate);
-        tvid = findViewById(R.id.tv_id_pesan);
+
+        tvid_pesan = findViewById(R.id.tv_id_pesan);
         tvnama = findViewById(R.id.tvnama_pemesan);
         tvalamat = findViewById(R.id.tvalamat_pemesan);
         tvnomer_kontak_pemesan = findViewById(R.id.tvnomer_kontak_pemesan);
@@ -51,7 +53,7 @@ public class UpdateTeknisi extends AppCompatActivity {
         tvnomer_kontak = findViewById(R.id.tvnomer_kontak);
 
         modelData = getIntent().getParcelableExtra(DATA_DETAIL);
-        vid = modelData .getIdPesan();
+        vid_pesan = modelData .getIdPesan();
         vnama = modelData .getNamaPemesan();
         valamat = modelData .getAlamatPemesan();
         vnomer_kontak_pemesan = modelData .getNomerKontakPemesan();
@@ -62,7 +64,7 @@ public class UpdateTeknisi extends AppCompatActivity {
         vnomer_kontak = modelData .getNomerKontak();
         status = modelData .getStatusPesanan();
 
-        tvid.setText(vid);
+        tvid_pesan.setText(vid_pesan);
         tvnama.setText(vnama);
         tvalamat.setText(valamat);
         tvnomer_kontak_pemesan.setText(vnomer_kontak_pemesan);
@@ -78,26 +80,26 @@ public class UpdateTeknisi extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 AlertDialog.Builder pesan = new AlertDialog.Builder(UpdateTeknisi.this);
-                pesan.setMessage("Apakah Anda Yakin Ingin Menyimpan DataLogin Ini?");
+                pesan.setMessage("Apakah Anda Yakin Ingin Menyimpan Data Ini?");
                 pesan.setTitle("PERHATIAN !");
                 pesan.setCancelable(true);
 
                 pesan.setPositiveButton("Ya", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        tvid.getText().toString();
+                        tvid_pesan.getText().toString();
                         status = etstatus.getText().toString();
                         if (etstatus.equals("")) {
                             etstatus.setError("Tidak Boleh Kosong");
                         } else {
-                            UpdateData();
+                            UpdateTeknisi();
                         }
                     }
 
-                    private void UpdateData() {
+                    private void UpdateTeknisi() {
                         APIInterface ardData = APIClient.getClient().create(APIInterface.class);
-                        Call<ResponseData> Update_data = ardData.EditData(vid, status);
-                        Update_data.enqueue(new Callback<ResponseData>() {
+                        Call<ResponseData> UpdateTeknisi = ardData.updateTeknisi(vid_pesan, status);
+                        UpdateTeknisi.enqueue(new Callback<ResponseData>() {
                             @Override
                             public void onResponse(Call<ResponseData> call, Response<ResponseData> response) {
                                 int kode = response.body().getKode();

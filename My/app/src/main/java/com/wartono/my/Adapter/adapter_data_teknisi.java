@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.wartono.my.Activity.Konsumen.DetilActivity;
+import com.wartono.my.Activity.Teknisi.UpdateTeknisi;
 import com.wartono.my.Model.Data.ModelData;
 import com.wartono.my.R;
 
@@ -18,23 +18,23 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class adapter_data extends RecyclerView.Adapter<adapter_data.HolderData> {
+public class adapter_data_teknisi extends RecyclerView.Adapter<adapter_data_teknisi.HolderData> {
     private Context context;
     private List<ModelData> list_data;
-    public adapter_data (Context context, List<ModelData> list_data){
+    public adapter_data_teknisi (Context context, List<ModelData>list_data){
         this.context = context;
         this.list_data = list_data;
     }
     @NonNull
     @Override
-    public HolderData onCreateViewHolder(@NonNull final ViewGroup parent, int viewType) {
+    public adapter_data_teknisi.HolderData onCreateViewHolder(@NonNull final ViewGroup parent, int viewType) {
         View layout = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_card,parent,false);
-        HolderData holder = new HolderData(layout);
+        adapter_data_teknisi.HolderData holder = new adapter_data_teknisi.HolderData(layout);
         return holder;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull HolderData holder, int position) {
+    public void onBindViewHolder(@NonNull adapter_data_teknisi.HolderData holder, int position) {
         final ModelData dm = list_data.get(position);
         holder.tv_id_card.setText(dm.getIdPesan());
         holder.tv_nama.setText(dm.getNamaPemesan());
@@ -50,8 +50,8 @@ public class adapter_data extends RecyclerView.Adapter<adapter_data.HolderData> 
         holder.cardview.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(context, DetilActivity.class);
-                i.putExtra(DetilActivity.DATA_DETAIL, (Parcelable) dm);
+                Intent i = new Intent(context, UpdateTeknisi.class);
+                i.putExtra(UpdateTeknisi.DATA_DETIL, (Parcelable) dm);
                 context.startActivity(i);
             }
         });
@@ -63,8 +63,7 @@ public class adapter_data extends RecyclerView.Adapter<adapter_data.HolderData> 
     }
     //menghandle data yang ada didalem cardview list
     public class HolderData extends RecyclerView.ViewHolder{
-        TextView tv_nama, tv_id_card,tv_alamat, tv_nomer_kontak_pemesan, tv_jenis, tv_kota,
-                tv_status, tv_tanggal, tv_nama_teknisi, tv_nomer_kontak;
+        TextView tv_nama, tv_id_card,tv_alamat, tv_nomer_kontak_pemesan, tv_jenis, tv_kota, tv_status, tv_tanggal, tv_nama_teknisi, tv_nomer_kontak;
         CardView cardview;
         public HolderData(@NonNull View itemView) {
             super(itemView);
@@ -72,15 +71,16 @@ public class adapter_data extends RecyclerView.Adapter<adapter_data.HolderData> 
             tv_nama = itemView.findViewById(R.id.tv_listnama);
             tv_id_card = itemView.findViewById(R.id.id_item);
             tv_alamat = itemView.findViewById(R.id.alamat);
-            tv_nomer_kontak_pemesan = itemView.findViewById(R.id.nomer_kontak_pemesan);
+            tv_nama_teknisi = itemView.findViewById(R.id.nama_teknisi);
+            tv_nomer_kontak = itemView.findViewById(R.id.nomer_kontak);
+            tv_nomer_kontak_pemesan = (TextView) itemView.findViewById(R.id.nomer_kontak_pemesan);
             tv_jenis = (TextView) itemView.findViewById(R.id.jenis_pesanan);
             tv_kota = (TextView) itemView.findViewById(R.id.kota);
             tv_status = (TextView) itemView.findViewById(R.id.list_status);
             tv_tanggal = (TextView) itemView.findViewById(R.id.tgl);
-            tv_nama_teknisi = (TextView) itemView.findViewById(R.id.nama_teknisi);
-            tv_nomer_kontak = (TextView) itemView.findViewById(R.id.nomer_kontak);
 
 
         }
     }
 }
+

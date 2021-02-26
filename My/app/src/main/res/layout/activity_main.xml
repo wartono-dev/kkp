@@ -1,243 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
+    app:layout_goneMarginBottom="10dp"
     tools:context=".Activity.Konsumen.MainActivity">
-
-   <FrameLayout
-       android:id="@+id/flMain"
-       android:layout_width="match_parent"
-       android:layout_height="?actionBarSize"
-       android:background=""
-       android:fitsSystemWindows="true">
-
-      <RelativeLayout
-          android:id="@+id/rlAppName"
+    <androidx.core.widget.NestedScrollView
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
-          android:layout_gravity="center">
+        android:layout_marginBottom="55dp">
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="vertical">
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="List Pesanan"
+          android:background="#07CC0F"
+          android:textSize="2sp"
+          android:textStyle="bold"
+          android:textColor="@color/white"
+          android:fontFamily="sans-serif"
+          android:gravity="center"/>
 
-         <TextView
+         <LinearLayout
              android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
-             android:layout_centerInParent="true"
-             android:fontFamily="monospace"
-             android:text="@string/header_name"
-             android:textColor="@android:color/white"
-             android:textSize="15sp"
-             android:textStyle="italic" />
+             android:layout_height="match_parent"
+             android:orientation="vertical">
 
-      </RelativeLayout>
-
-   </FrameLayout>
-
-   <LinearLayout
-       android:layout_width="match_parent"
-       android:layout_height="0dp"
-       android:layout_marginTop="16dp"
-       android:layout_weight="0.8"
-       android:orientation="horizontal"
-       android:paddingLeft="16dp"
-       android:paddingRight="16dp"
-       android:paddingBottom="8dp">
-
-      <androidx.cardview.widget.CardView
-          android:layout_width="0dp"
-          android:layout_height="match_parent"
-          android:layout_margin="10dp"
-          android:layout_weight="1"
-          android:gravity="center"
-          android:onClick="profil"
-          android:orientation="vertical"
-          android:padding="16dp"
-          app:cardCornerRadius="10dp"
-          app:cardElevation="3dp"
-          app:strokeColor="@color/colorPrimaryDark"
-          app:strokeWidth="2dp">
-
-         <RelativeLayout
-             android:layout_width="match_parent"
-             android:layout_height="wrap_content"
-             android:layout_gravity="center">
-
-            <ImageView
-                android:id="@+id/imgProfile"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_centerInParent="true"
-                android:src="@drawable/logo_ng_utama" />
-
-            <Button
-                android:id="@+id/btnProfil"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/imgProfile"
-                android:layout_marginTop="15dp"
-                android:gravity="center"
-                android:text="PROFILE"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
-                android:textColor="#ffff"
-                android:textStyle="bold" />
-
-         </RelativeLayout>
-
-      </androidx.cardview.widget.CardView>
-
-      <androidx.cardview.widget.CardView
-          android:layout_width="0dp"
-          android:layout_height="match_parent"
-          android:layout_margin="10dp"
-          android:layout_weight="1"
-          android:gravity="center"
-          android:onClick="pesan"
-          android:orientation="vertical"
-          android:padding="16dp"
-          app:cardCornerRadius="10dp"
-          app:cardElevation="3dp"
-          app:strokeColor="@color/colorPrimaryDark"
-          app:strokeWidth="2dp">
-
-         <RelativeLayout
-             android:layout_width="match_parent"
-             android:layout_height="wrap_content"
-             android:layout_gravity="center">
-
-            <ImageView
-                android:id="@+id/imgHistory"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_centerInParent="true"
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_data"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_gravity="center"
-                android:src="@drawable/keranjang" />
-
-            <Button
-                android:id="@+id/btnPesanSekarang"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/imgHistory"
-                android:layout_marginTop="15dp"
-                android:gravity="center"
-                android:text="Pesan Sekarang"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
-                android:textColor="#FAF9F8"
-                android:textStyle="bold" />
-
-         </RelativeLayout>
-
-      </androidx.cardview.widget.CardView>
+                android:layout_marginStart="13dp"
+                android:layout_marginEnd="10dp"
+                tools:listitem="@layout/item_card" />
+         </LinearLayout>
 
    </LinearLayout>
 
+</androidx.core.widget.NestedScrollView>
    <LinearLayout
        android:layout_width="match_parent"
-       android:layout_height="0dp"
-       android:layout_weight="0.8"
-       android:orientation="horizontal"
-       android:paddingLeft="16dp"
-       android:paddingRight="16dp"
-       android:paddingBottom="16dp">
-
-      <androidx.cardview.widget.CardView
-          android:layout_width="0dp"
-          android:layout_height="match_parent"
-          android:layout_margin="10dp"
-          android:layout_weight="1"
-          android:gravity="center"
-          android:onClick="List_Harga"
-          android:orientation="vertical"
-          android:padding="16dp"
-          app:cardCornerRadius="10dp"
-          app:cardElevation="3dp"
-          app:strokeColor="@color/colorPrimaryDark"
-          app:strokeWidth="2dp">
-
-         <RelativeLayout
-             android:layout_width="match_parent"
-             android:layout_height="wrap_content"
-             android:layout_gravity="center">
-
-            <ImageView
-                android:id="@+id/imgKereta"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_centerInParent="true"
-                android:src="@drawable/rupiah" />
-
-            <Button
-                android:id="@+id/btnListHarga"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/imgKereta"
-                android:layout_marginTop="30dp"
-                android:gravity="center"
-                android:text="List Harga"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
-                android:textColor="#ffff"
-                android:textStyle="bold" />
-
-         </RelativeLayout>
-
-      </androidx.cardview.widget.CardView>
-
-      <androidx.cardview.widget.CardView
-          android:layout_width="0dp"
-          android:layout_height="match_parent"
-          android:layout_margin="10dp"
-          android:layout_weight="1"
-          android:gravity="center"
-          android:onClick="Pesan_Sekarang"
-          android:orientation="vertical"
-          android:padding="16dp"
-          app:cardCornerRadius="10dp"
-          app:cardElevation="3dp"
-          app:strokeColor="@color/colorPrimaryDark"
-          app:strokeWidth="2dp">
-
-         <RelativeLayout
-             android:layout_width="match_parent"
-             android:layout_height="wrap_content"
-             android:layout_gravity="center">
-
-            <ImageView
-                android:id="@+id/imgHotel"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_centerInParent="true"
-                android:src="@drawable/jam" />
-
-            <Button
-                android:id="@+id/btnHistoriPesanan"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/imgHotel"
-                android:layout_marginTop="30dp"
-                android:gravity="center"
-                android:text="Histori Pesanan"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
-                android:textColor="#ffff"
-                android:textStyle="bold" />
-
-         </RelativeLayout>
-
-      </androidx.cardview.widget.CardView>
-
+       android:layout_height="wrap_content"
+       android:layout_alignParentBottom="true"
+       android:layout_margin="5dp"
+       android:gravity="center"
+       android:orientation="horizontal">
+      <TextView
+          android:id="@+id/perintah"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="Pesan Sekarang ------>"
+          android:textColor="#FF5722"
+          android:textStyle="bold"
+          android:textSize="20dp"/>
+      <ImageView
+          android:id="@+id/btn_add"
+          android:layout_width="50dp"
+          android:layout_marginStart="10dp"
+          android:layout_height="50dp"
+          android:src="@drawable/ic_baseline_add_circle_24"
+          android:layout_marginEnd="20dp" />
    </LinearLayout>
-
-   <com.google.android.material.button.MaterialButton
-       android:id="@+id/out"
-       android:layout_width="match_parent"
-       android:layout_height="48dp"
-       android:layout_marginLeft="64dp"
-       android:layout_marginRight="64dp"
-       android:layout_marginBottom="16dp"
-       android:text="Sign Out"
-       android:textSize="16sp"
-       android:theme="@style/Theme.MaterialComponents.Light"
-       app:backgroundTint="#3F51B5"
-       app:cornerRadius="50dp" />
-
-</LinearLayout>
-
+</RelativeLayout>

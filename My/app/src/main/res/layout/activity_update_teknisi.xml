@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.Konsumen.DetilActivity">
+    android:padding="30dp"
+    tools:context=".Activity.Teknisi.UpdateTeknisi">
 
 
 
@@ -13,13 +14,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAlignment="center"
-        android:text="Detail pesanan"
+        android:text="List Pesanan Teknisi"
         android:textStyle="bold"
+        android:background="#4D5FFD"
         android:textSize="30dp"/>
 
     <TextView
-        android:id="@+id/id_pesanan"
-        android:layout_marginTop="175dp"
+        android:id="@+id/id_pesan"
+        android:layout_marginTop="50dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/detail"
@@ -31,7 +33,7 @@
         android:id="@+id/nama"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/id_pesanan"
+        android:layout_below="@+id/id_pesan"
         android:text="   wibawa bangkit"
         android:textStyle="bold"
         android:textSize="20sp"/>
@@ -103,12 +105,13 @@
 
     <Button
         android:id="@+id/btnupdate"
-        android:layout_width="match_parent"
+        android:layout_marginTop="30dp"
+        android:layout_width="170dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/nomer_kontak"
         android:text="Update"
-        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
         android:textStyle="bold"
-        android:textSize="15sp"/>
+        android:textSize="24sp"/>
 
 </RelativeLayout>
