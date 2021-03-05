@@ -1,14 +1,24 @@
 package com.wartono.my.Activity.Konsumen;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.wartono.my.API.APIClient;
+import com.wartono.my.API.APIInterface;
 import com.wartono.my.Model.Data.ModelData;
+import com.wartono.my.Model.Data.ResponseData;
 import com.wartono.my.R;
 
 import androidx.appcompat.app.AppCompatActivity;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class DetilActivity extends AppCompatActivity {
 
@@ -16,19 +26,19 @@ public class DetilActivity extends AppCompatActivity {
             vkota_administrasi, vtanggal_pesanan, vjenis_pesanan, vstatus_pesanan, vnama_teknisi, vnomer_kontak;
     TextView tvid_pesan , tvnama_pemesan , tvalamat_pemesan, tvnomer_kontak_pemesan, tvstatus_pesanan,
             tvkota_administrasi, tvtanggal_pesanan, tvjenis_pesanan, tvnama_teknisi, tvnomer_kontak;
-    Button btnback;
+    Button btncancel, btneditdata;
 
     public static final String DATA_DETAIL ="string_extra";
 
-    public DetilActivity() {
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detil);
 
-        btnback = findViewById(R.id.btnback);
+        btncancel = findViewById(R.id.btncancel);
+        btneditdata = findViewById(R.id.btneditdata);
+
 
         tvid_pesan = findViewById(R.id.id_pesan);
         tvnama_pemesan = findViewById(R.id.nama);
@@ -64,8 +74,60 @@ public class DetilActivity extends AppCompatActivity {
         tvnama_teknisi.setText(vnama_teknisi);
         tvnomer_kontak.setText(vnomer_kontak);
 
-        btnback.setOnClickListener(v -> {
-            Intent kembali = new Intent(DetilActivity.this, MainActivity.class);
-            startActivity(kembali);
+        btncancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder pesan = new AlertDialog.Builder(DetilActivity.this);
+                pesan.setMessage("Apakah Anda Yakin Ingin Membatalkan Pesanan Ini?");
+                pesan.setTitle("PERHATIAN !");
+                pesan.setCancelable(true);
+
+                pesan.setPositiveButton("Ya", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        tvid_pesan.getText().toString();
+                        deleteData();
+
+                        Intent hapus = new Intent(DetilActivity.this, MainActivity.class);
+                        startActivity(hapus);
+            }
+            });
+                pesan.setNegativeButton("Batal", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    dialog.cancel();
+                }
+            });
+                pesan.show();
+        }
+
+            private void deleteData() {
+                APIInterface ardData = APIClient.getClient().create(APIInterface.class);
+                Call<ResponseData> hapusData = ardData.hapusData(vid_pesan);
+
+                hapusData.enqueue(new Callback<ResponseData>() {
+                    @Override
+                    public void onResponse(Call<ResponseData> call, Response<ResponseData> response) {
+                        int kode = response.body().getKode();
+                        String pesan = response.body().getMessage();
+
+                        Toast.makeText(DetilActivity.this, "Kode : "+kode+" | Pesan : "+pesan, Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onFailure(Call<ResponseData> call, Throwable t) {
+
+                    }
+                });
+
+            }
         });
-        }}
+        btneditdata.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent a = new Intent(DetilActivity.this, EditKonsumen.class);
+                startActivity(a);
+            }
+        });
+}
+}

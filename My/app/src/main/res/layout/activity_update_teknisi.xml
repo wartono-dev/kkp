@@ -9,109 +9,281 @@
 
 
 
-    <TextView
-        android:id="@+id/detail"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:text="List Pesanan Teknisi"
-        android:textStyle="bold"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nomor Pesanan :"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/id_pesan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10sp"
+                android:text="1"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/id_pesanan"
+                android:text="Nama :"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/nama"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/id_pesanan"
+                android:layout_marginStart="10dp"
+                android:text="Iman"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/id_pesanan"
+                android:text="Alamat :"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/alamat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/nama"
+                android:layout_marginStart="10dp"
+                android:text="Sumur batu no.23 rt 03/05"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/id_pesanan"
+                android:text="Nomor Telepon :"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/nomer_kontak_pemesan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/alamat"
+                android:layout_marginStart="10dp"
+                android:text="089659127161"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/id_pesanan"
+                android:text="Kota :"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/kota"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/nomer_kontak_pemesan"
+                android:layout_marginStart="10dp"
+                android:text="Jakarta Pusat"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/id_pesanan"
+                android:text="Status Pekerjaan :"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/kota"
+                android:text="Proses"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/id_pesanan"
+                android:text="Tanggal :"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tanggal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="2021-01-23"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/id_pesanan"
+                android:text="Jenis Pesanan :"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/jenis_pesanan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tanggal"
+                android:layout_marginStart="10dp"
+                android:text="Service" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/id_pesanan"
+                android:text="Nama Teknisi :"
+                android:textSize="20sp"
+                />
+
+            <TextView
+                android:id="@+id/nama_teknisi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="Wartono"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="17dp"
+                android:layout_below="@+id/id_pesanan"
+                android:text="Nomer Teknisi :"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/nomer_kontak"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/namateknisi"
+                android:layout_marginStart="10dp"
+                android:text=" 081273614728"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+    <TextView
+        android:id="@+id/editpesanan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:background="#4D5FFD"
-        android:textSize="30dp"/>
-
-    <TextView
-        android:id="@+id/idpesan"
-        android:layout_marginTop="50dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/detail"
-        android:text="   1"
-        android:textStyle="bold"
-        android:textSize="20sp"/>
-
-    <TextView
-        android:id="@+id/nama"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/idpesan"
-        android:text="   wibawa bangkit"
-        android:textStyle="bold"
-        android:textSize="20sp"/>
-
-    <TextView
-        android:id="@+id/alamat"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/nama"
-        android:text="  sumur batu no.23 rt 03/05"
-        android:textStyle="bold"
-        android:textSize="20sp"/>
-
-    <TextView
-        android:id="@+id/kota"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/alamat"
-        android:text="  jakarta pusat"
-        android:textStyle="bold"
-        android:textSize="20sp"/>
-
-    <EditText
-        android:id="@+id/status"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/kota"
-        android:text="   proses"
-        android:textStyle="bold"
-        android:textSize="20sp"/>
-
-    <TextView
-        android:id="@+id/tanggal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/status"
-        android:text="   2021-01-23"
-        android:textStyle="bold"
-        android:textSize="20sp"/>
-
-    <TextView
-        android:id="@+id/jenispesanan"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tanggal"
-        android:text="   service"
-        android:textStyle="bold"
-        android:textSize="20sp"/>
-
-    <TextView
-        android:id="@+id/namateknisi"
-        android:layout_marginTop="50dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/jenispesanan"
-        android:text=" nama teknisi"
-        android:textStyle="bold"
-        android:textSize="20sp"/>
-
-    <TextView
-        android:id="@+id/nomerkontak"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/namateknisi"
-        android:text=" 089659127161"
-        android:textStyle="bold"
-        android:textSize="20sp"/>
-
+        android:text="EDIT DATA PESANAN"
+        android:textAlignment="center"
+        android:textSize="24dp"
+        android:textStyle="bold" />
 
     <Button
-        android:id="@+id/btnupdate"
-        android:layout_marginTop="30dp"
-        android:layout_width="170dp"
+        android:id="@+id/btneditdata"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/nomer_kontak"
-        android:text="Update"
+        android:layout_below="@+id/detail"
+        android:layout_marginTop="500dp"
         android:layout_centerHorizontal="true"
-        android:textStyle="bold"
-        android:textSize="24sp"/>
+        android:text="   UPDETE   "
+        android:textSize="24dp"
+        android:textStyle="bold" />
 
 </RelativeLayout>

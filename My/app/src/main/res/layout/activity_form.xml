@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="30dp"
+    android:layout_margin="20dp"
+    android:padding="10dp"
     tools:context=".Activity.Konsumen.FormActivity">
 
     <TextView
@@ -17,73 +18,133 @@
         android:textStyle="bold"
         android:text="Pesan sekarang"/>
 
-    <EditText
-        android:id="@+id/etnama_pemesan"
+    <LinearLayout
+        android:id="@+id/y"
+        android:layout_width="336dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="30dp"
-        android:layout_below="@+id/tvPesan_Sekarang"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="nama pemesan"
-        android:inputType="text"
-        android:drawablePadding="24dp"/>
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nama :"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            />
 
-    <EditText
-        android:id="@+id/etalamat_pemesan"
-        android:layout_marginTop="12dp"
-        android:layout_below="@+id/etnama_pemesan"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="alamat pemesan"
-        android:inputType="text"
-        android:drawablePadding="24dp"/>
+        <EditText
+            android:id="@+id/etalamat_pemesan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/etnama_pemesan"
+            android:layout_marginTop="12dp"
+            android:drawablePadding="24dp"
+            android:hint="alamat pemesan"
+            android:inputType="text" />
 
-    <EditText
-        android:id="@+id/etnomer_kontak_pemesan"
-        android:layout_marginTop="12dp"
-        android:layout_below="@+id/etalamat_pemesan"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="nomer kontak"
-        android:inputType="text"
-        android:drawablePadding="24dp"/>
 
-    <EditText
-        android:id="@+id/etkota_administrasi"
-        android:layout_marginTop="12dp"
-        android:layout_below="@+id/etnomer_kontak_pemesan"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="kota adminitrasi"
-        android:inputType="text"
-        android:drawablePadding="24dp"/>
+        <EditText
+            android:id="@+id/etnomer_kontak_pemesan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/etalamat_pemesan"
+            android:layout_marginTop="12dp"
+            android:drawablePadding="24dp"
+            android:hint="nomer kontak"
+            android:inputType="text" />
 
-    <EditText
-        android:id="@+id/ettanggal_pesanan"
-        android:layout_marginTop="12dp"
-        android:layout_below="@+id/etkota_administrasi"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="tanggal_pesanan"
-        android:inputType="text"
-        android:drawablePadding="24dp"/>
+        <EditText
+            android:id="@+id/etkota_administrasi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/etnomer_kontak_pemesan"
+            android:layout_marginTop="12dp"
+            android:drawablePadding="24dp"
+            android:hint="kota adminitrasi"
+            android:inputType="text" />
+        android:layout_width=""
+        android:layout_height=""
 
-    <EditText
-        android:id="@+id/etjenis_pesanan"
-        android:layout_marginTop="12dp"
-        android:layout_below="@+id/ettanggal_pesanan"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="service"
-        android:inputType="text"
-        android:drawablePadding="24dp"/>
+        <EditText
+            android:id="@+id/ettanggal_pesanan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/etkota_administrasi"
+            android:layout_marginTop="12dp"
+            android:drawablePadding="24dp"
+            android:hint="tanggal_pesanan"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/etjenis_pesanan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ettanggal_pesanan"
+            android:layout_marginTop="12dp"
+            android:drawablePadding="24dp"
+            android:hint="service"
+            android:inputType="text" />
+        android:layout_width=""
+        android:layout_height=""
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/etnama_pemesan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:hint="nama pemesan"
+                android:inputType="text" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nama :"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout>
+
+        </LinearLayout>
+        android:layout_width=""
+        android:layout_height=""
+
+        <LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout>
+
+        </LinearLayout>
+        android:layout_width=""
+        android:layout_height=""
+
+        <LinearLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
 
     <Button
         android:id="@+id/btnPesan"
-        android:layout_below="@+id/etjenis_pesanan"
         android:layout_marginTop="20dp"
         android:background="#4D5FFD"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/y"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
         android:textAlignment="center"
@@ -91,5 +152,6 @@
         android:textStyle="bold"
         android:text="Pesan sekarang"
         />
+
 
 </RelativeLayout>

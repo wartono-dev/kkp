@@ -61,6 +61,18 @@ public interface APIInterface {
              @Field("status_pesanan") String status_pesanan
      );
 
+     @FormUrlEncoded
+     @POST("update_data.php")
+     Call<ResponseData> EditData(
+             @Field("id_pesan") String vid_pesan,
+             @Field("nama_pemesan") String nama_pemesan,
+             @Field("alamat_pemesan") String alamat_pemesan,
+             @Field("nomer_kontak_pemesan") String nomer_kontak_pemesan,
+             @Field("kota_administrasi") String kota_administrasi,
+             @Field("status_pesanan") String status_pesanan,
+             @Field("tanggal_pesanan") String tanggal_pesanan
+     );
+
      @GET("read_data.php")
      Call<ResponseData> Read_data(
              @Query("id_pesan") String id_pesan,
@@ -72,4 +84,5 @@ public interface APIInterface {
              @Query("nama_teknisi") String nama_teknisi,
              @Query("nomer_kontak") String nomer_kontak
      );
+
 }
